@@ -48,12 +48,12 @@ public class MenuController {
         mapAttr.put("id","115");
         mapAttr.put("authName","参数管理");
         mapAttr.put("path","Attrs");
-        menuArr[1]=mapAttr;
+        menuArr[0]=mapAttr;
         Map<String,String> mapGoods= new HashMap<String,String>();
         mapGoods.put("id","116");
         mapGoods.put("authName","商品管理");
         mapGoods.put("path","Goods");
-        menuArr[2]=mapGoods;
+        menuArr[1]=mapGoods;
         userList.get(0).setChildren(menuArr);
 
 
