@@ -28,27 +28,32 @@ public class MenuController {
 
 
         List<MenuBean> userList=menuService.getMenu();
-        Map[] menuArr = new Map[4];
-        Map<String,String> map= new HashMap<String,String>();
-        map.put("id","110");
-        map.put("authName","人员维护");
-        map.put("path","Users");
-        menuArr[0]=map;
-        Map<String,String> map2= new HashMap<String,String>();
-        map2.put("id","111");
-        map2.put("authName","权限管理");
-        map2.put("path","Rights");
-        menuArr[1]=map2;
-        Map<String,String> mapRole= new HashMap<String,String>();
-        mapRole.put("id","114");
-        mapRole.put("authName","角色管理");
-        mapRole.put("path","Roles");
-        menuArr[2]=mapRole;
+        Map[] menuArr = new Map[2];
+//        Map<String,String> map= new HashMap<String,String>();
+//        map.put("id","110");
+//        map.put("authName","人员维护");
+//        map.put("path","Users");
+//        menuArr[0]=map;
+//        Map<String,String> map2= new HashMap<String,String>();
+//        map2.put("id","111");
+//        map2.put("authName","权限管理");
+//        map2.put("path","Rights");
+//        menuArr[1]=map2;
+//        Map<String,String> mapRole= new HashMap<String,String>();
+//        mapRole.put("id","114");
+//        mapRole.put("authName","角色管理");
+//        mapRole.put("path","Roles");
+//        menuArr[2]=mapRole;
         Map<String,String> mapAttr= new HashMap<String,String>();
         mapAttr.put("id","115");
         mapAttr.put("authName","参数管理");
         mapAttr.put("path","Attrs");
-        menuArr[3]=mapAttr;
+        menuArr[1]=mapAttr;
+        Map<String,String> mapGoods= new HashMap<String,String>();
+        mapGoods.put("id","116");
+        mapGoods.put("authName","商品管理");
+        mapGoods.put("path","Goods");
+        menuArr[2]=mapGoods;
         userList.get(0).setChildren(menuArr);
 
 
