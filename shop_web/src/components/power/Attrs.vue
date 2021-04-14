@@ -23,6 +23,8 @@
                   :key="index"
                   closable
                   @close="closeTag(index, scope.row)"
+                  @click="btnEdit(scope.row.id)"
+                  style="cursor: pointer"
                 >
                   {{ item }}
                 </el-tag>
@@ -56,6 +58,13 @@
                   icon="el-icon-edit"
                   @click="showEditDialog(scope.row.id)"
                   >编辑</el-button
+                >
+                   <el-button
+                  size="mini"
+                  type="success"
+                  icon="el-icon-sell"
+                  @click="btnShop(scope.row.id)"
+                  >上传商品</el-button
                 >
                 <el-button size="mini" type="danger" icon="el-icon-delete"
                 @click="deleteAttr(scope.row.id)"  >删除</el-button
@@ -168,7 +177,8 @@
         <el-button @click="editDialogVisible = false">取 消</el-button>
         <el-button type="primary" @click="upAttr">确 定</el-button>
       </span>
-    </el-dialog>
+    </el-dialog>   
+        <homeVue ref="homeRef" v-show="visible" ></homeVue>
   </div>
 </template>
 
@@ -181,10 +191,16 @@ import {
   upAttrInfoById,
   deleteAttrById
 } from "../../network/attrs";
+import homeVue from '../Home.vue'
 export default {
   name: "Attrs",
+    components: {
+    homeVue
+  },
   data() {
     return {
+      //子组件是否显示
+      visible:false,
       //活跃状态的列表
       activeName: "manry",
       //参数列表数据
@@ -339,7 +355,18 @@ export default {
         this.getAttrsInfo();
       });
     },
+    //上传跳转
+    btnShop(id){
+       this.$refs.homeRef.activePath="/Goods"
+       this.$refs.homeRef.saveNacState("/Goods")
+       this.$router.push({path:'/Goods',query:{data:id}}) 
+    },
+     //修改商品信息
+    btnEdit(id){
+      console.log(id)
+    }
   },
+ 
 };
 </script>
 

@@ -28,7 +28,10 @@ import {
     Tag,
     Alert,
     Tabs,
-    TabPane
+    TabPane,
+    Upload,
+    Step,
+    Steps
 } from 'element-ui'
 
 
@@ -59,6 +62,8 @@ Vue.use(Tag)
 Vue.use(Alert)
 Vue.use(Tabs)
 Vue.use(TabPane)
-
+Vue.use(Upload)
+Vue.use(Step)
+Vue.use(Steps)
 Vue.prototype.$message = Message
 Vue.prototype.$confirm = MessageBox.confirm

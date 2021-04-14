@@ -70,7 +70,7 @@ export default {
       //是否折叠
       isCollapse: false,
       //被激活的链接地址
-      activePath:''
+      activePath:'/Attrs'
     };
   },
   created() {
@@ -100,7 +100,6 @@ export default {
     saveNacState(activePath){
       window.sessionStorage.setItem("activePath",activePath);
       this.activePath=activePath;
-      
     }
   },
 };

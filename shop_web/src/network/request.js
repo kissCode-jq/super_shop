@@ -19,14 +19,14 @@ export function request(config) {
         config.headers.Authorization = window.sessionStorage.getItem("token");
         return config
     }, err => {
-        console.log("request:" + err);
+        console.log(err)
     })
 
     // 2.2.响应拦截
     instance.interceptors.response.use(res => {
         return res.data
     }, err => {
-        console.log(err);
+        console.log(err)
     })
 
     // 3.发送真正的网络请求

@@ -88,6 +88,8 @@ export default {
         if (!valid) return
       })
       serverlogin(this.loginForm).then((res) => {
+        if (res == null) return this.$message.error('服务器连接出错')
+        if (res.code != 200) return this.$message.error(res.message)
         this.$message.success(res.message)
         window.sessionStorage.setItem('token', res.data)
         this.$router.push('/home')
