@@ -1,6 +1,9 @@
 package com.cache.sun.bean;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.Map;
 
 /**
@@ -11,6 +14,8 @@ import java.util.Map;
  * @Description: 文件描述信息
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class MenuBean {
     private Integer id;
     private String authName;

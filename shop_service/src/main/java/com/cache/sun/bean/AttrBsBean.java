@@ -1,6 +1,8 @@
 package com.cache.sun.bean;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @Package: com.cache.sun.bean包名
@@ -10,6 +12,8 @@ import lombok.Data;
  * @Description: 文件描述信息
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class AttrBsBean {
     private String id;
     private String attrName;
